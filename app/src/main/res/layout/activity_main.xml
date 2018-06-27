@@ -19,4 +19,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/string_unzip" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_goto_expandable_item_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/str_go_activity_expandable_item" />
 </LinearLayout>

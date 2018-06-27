@@ -1,24 +1,33 @@
 package com.example.admin.mytestgit;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.admin.mytestgit.brvahdemo.activity.ExpandableItemActivity;
 import com.example.admin.mytestgit.utils.StrZipUtil;
 
 import java.io.IOException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    @BindView(R.id.btn_zip)
+    AppCompatButton mBtnZip;
+    @BindView(R.id.btn_unzip)
+    AppCompatButton mBtnUnzip;
     private String mTempStr;
     private String mZipStr;
-    private AppCompatButton mBtnZip;
-    private AppCompatButton mBtnUnZip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         initView();
         try {
             init();
@@ -29,10 +38,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         mBtnZip = findViewById(R.id.btn_zip);
-        mBtnUnZip = findViewById(R.id.btn_unzip);
-        mBtnZip.setOnClickListener(this);
-        mBtnUnZip.setOnClickListener(this);
+        mBtnUnzip = findViewById(R.id.btn_unzip);
+//        mBtnZip.setOnClickListener(this);
+//        mBtnUnzip.setOnClickListener(this);
     }
+
+    @OnClick(R.id.btn_zip)
+    void zipStr(View view) {
+        Toast.makeText(this, "压缩", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.btn_unzip)
+    void unZipStr() {
+        Toast.makeText(this, "解压缩", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.btn_goto_expandable_item_activity)
+    void gotoActivityExpandableItem(){
+        startActivity(ExpandableItemActivity.getInstance(this));
+    }
+
 
     private void init() throws IOException {
 //        mTempStr = "l;jsafljsdoeiuoksjdfpwrp3oiruewoifrjewflk我的得到喀喀喀" +
@@ -61,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 "爸爸你为我付出了这么多。爸爸，我爱您，这是我一直以来就一直想对您说的心里话，每一次父亲节都想告诉您，可是，我从来都没有说出口，如今，又一次的父亲节来临，我想让您知道——我爱您，爸爸\n";
 
 
-
     }
 
     @Override
@@ -84,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                break;
+            case R.id.btn_goto_expandable_item_activity:
+//                startActivity(ExpandableItemActivity.getInstance(getApplicationContext()));
                 break;
             default:
                 break;
