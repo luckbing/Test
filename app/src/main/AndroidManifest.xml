@@ -16,10 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".brvahdemo.activity.ExpandableItemActivity" />
-
         <activity android:name=".brvahdemo.activity.MultiStyleActivity" />
+        <activity android:name=".pagerslidingtabstrip.activity.PagerSlidingTabStripDemoActivity" />
+        <activity android:name=".videoplayerdemo.activity.VideoPlayerActivity"></activity>
     </application>
 
 </manifest>

@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.admin.mytestgit.brvahdemo.activity.ExpandableItemActivity;
+import com.example.admin.mytestgit.pagerslidingtabstrip.activity.PagerSlidingTabStripDemoActivity;
 import com.example.admin.mytestgit.utils.StrZipUtil;
+import com.example.admin.mytestgit.videoplayerdemo.activity.VideoPlayerActivity;
 
 import java.io.IOException;
 
@@ -54,8 +56,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @OnClick(R.id.btn_goto_expandable_item_activity)
-    void gotoActivityExpandableItem(){
+    void gotoActivityExpandableItem() {
         startActivity(ExpandableItemActivity.getInstance(this));
+    }
+
+    @OnClick(R.id.btn_goto_pager_demo_activity)
+    void gotoActivityPagerDemo() {
+        startActivity(PagerSlidingTabStripDemoActivity.getInstance(this));
+    }
+
+    @OnClick(R.id.btn_goto_videoplayaer_demo_activity)
+    void gotoActivityVideoPlayerDemo() {
+        startActivity(VideoPlayerActivity.getInstance(this));
     }
 
 

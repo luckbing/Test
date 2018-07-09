@@ -3,4 +3,6 @@
     <string name="string_zip">压缩</string>
     <string name="string_unzip">解压缩</string>
     <string name="str_go_activity_expandable_item">GoActivityExpandableItem</string>
+    <string name="str_go_activity_pager_demo">GoActivityPagerDemo</string>
+    <string name="str_go_activity_videoplayer_demo">GoActivityVideoPlayerDemo</string>
 </resources>
